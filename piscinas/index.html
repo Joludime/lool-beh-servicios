@@ -24,30 +24,29 @@
     <header class="portada">
 
         <!-- Selector de idioma -->
-        <nav
-            class="selector-idioma"
-            aria-label="Seleccionar idioma"
-        >
-            <button
-                id="idioma-es"
-                class="idioma activo"
-                type="button"
-                aria-pressed="true"
-            >
-                ES
-            </button>
+       <nav class="selector-idioma" aria-label="Idioma / Language">
+    <span data-es="Idioma:" data-en="Language:">Idioma:</span>
 
-            <span>|</span>
+    <button
+        id="idioma-es"
+        class="idioma activo"
+        type="button"
+        aria-pressed="true"
+        lang="es"
+    >
+        <span aria-hidden="true">🇲🇽</span> Español
+    </button>
 
-            <button
-                id="idioma-en"
-                class="idioma"
-                type="button"
-                aria-pressed="false"
-            >
-                EN
-            </button>
-        </nav>
+    <button
+        id="idioma-en"
+        class="idioma"
+        type="button"
+        aria-pressed="false"
+        lang="en"
+    >
+        <span aria-hidden="true">🇺🇸</span> English
+    </button>
+</nav>
 
         <div class="contenedor portada__contenido">
 
@@ -391,19 +390,19 @@
                 data-es="Servicios completos"
                 data-en="Complete services"
             >
-                Servicios completos
+                Servicios con compromiso y calidad.
             </p>
 
             <h2
                 data-es="Conoce todos los servicios que Lool Beh te ofrece"
                 data-en="Discover all the services Lool Beh has to offer"
             >
-                 Conoce otros servicios que Lool Beh ofrece
+                 Explora nuestros servicios 
             </h2>
 
             <a
                 class="boton-principal boton-principal--secundario"
-                href="otros-servicios.html"
+                href="../index.html#servicios"
                 data-es="Ver otros servicios"
                 data-en="See other services"
             >

@@ -19,6 +19,32 @@
 
 <body>
     <header class="portada">
+        <nav class="selector-idioma" aria-label="Idioma / Language">
+    <span
+        data-es="Idioma:"
+        data-en="Language:"
+    >Idioma:</span>
+
+    <button
+        type="button"
+        class="idioma activo"
+        data-idioma="es"
+        aria-pressed="true"
+        lang="es"
+    >
+        <span aria-hidden="true">🇲🇽</span> Español
+    </button>
+
+    <button
+        type="button"
+        class="idioma"
+        data-idioma="en"
+        aria-pressed="false"
+        lang="en"
+    >
+        <span aria-hidden="true">🇺🇸</span> English
+    </button>
+</nav>
         <div class="contenedor">
             <p class="portada__etiqueta">Mérida, Yucatán</p>
 

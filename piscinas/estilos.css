@@ -720,3 +720,71 @@ p + p {
         transition: none !important;
     }
 }
+
+/* SELECTOR DE IDIOMA: MISMO DISEÑO QUE LA PORTADA */
+
+.selector-idioma {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    max-width: calc(100% - 40px);
+    padding: 8px 12px;
+    border: none;
+    border-radius: 24px;
+    background: var(--blanco);
+    color: var(--texto);
+    box-shadow: var(--sombra);
+    backdrop-filter: none;
+}
+
+.selector-idioma > span {
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.selector-idioma .idioma {
+    min-height: 44px;
+    padding: 8px 12px;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    background: transparent;
+    color: #245c56;
+    font: inherit;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.selector-idioma .idioma:hover {
+    background: #e5f4f2;
+}
+
+.selector-idioma .idioma.activo {
+    background: #245c56;
+    color: var(--blanco);
+}
+
+.selector-idioma .idioma:focus-visible {
+    outline: 3px solid var(--texto);
+    outline-offset: 3px;
+}
+
+@media (max-width: 600px) {
+    .selector-idioma {
+        top: 16px;
+        right: 14px;
+        left: 14px;
+        width: fit-content;
+        max-width: calc(100% - 28px);
+        margin-inline: auto;
+    }
+
+    .portada__contenido {
+        padding-top: 150px;
+    }
+}
