@@ -3,19 +3,17 @@
    ================================================== */
 
 :root {
-    --casa-lool-beh: #65b9ae;
-    --casa-lool-beh-oscuro: #245c56;
-    --azul-oscuro: #052e4b;
-    --azul-principal: #006d8f;
-    --azul-claro: #def7fb;
-    --turquesa: #00a9c6;
+    --azul-oscuro: #245c56;
+    --azul-principal: #65b9ae;
+    --azul-claro: #e5f4f2;
+    --turquesa: #65b9ae;
     --verde-whatsapp: #17e69a;
     --verde-oscuro: #32e6a1;
     --blanco: #ffffff;
-    --gris-claro: #f3f8fa;
-    --gris-texto: #425466;
-    --texto: #082f49;
-    --sombra: 0 14px 35px rgba(6, 47, 79, 0.16);
+    --gris-claro: #f4f9f8;
+    --gris-texto: #425b58;
+    --texto: #173b37;
+    --sombra: 0 14px 35px rgba(36, 92, 86, 0.16);
     --radio: 22px;
 }
 
@@ -104,12 +102,11 @@ p + p {
         linear-gradient(
             90deg,
             rgba(36, 92, 86, 0.97) 0%,
-            rgba(36, 92, 86, 0.90) 48%,
-            rgba(101, 185, 174, 0.55) 100%
+            rgba(55, 124, 115, 0.88) 48%,
+            rgba(101, 185, 174, 0.42) 100%
         ),
         url("imagenes/piscina-portada.jpg")
         center / cover no-repeat;
-    background-color: var(--casa-lool-beh-oscuro);
     color: var(--blanco);
 }
 
@@ -155,7 +152,7 @@ p + p {
 .portada__frase {
     max-width: 650px;
     margin-bottom: 10px;
-    color: #d9fbff;
+    color: #e5f4f2;
     font-size: clamp(1.4rem, 4vw, 2.1rem);
     font-weight: 650;
 }
@@ -202,7 +199,7 @@ p + p {
     padding: 8px 14px;
     border: 1px solid rgba(255, 255, 255, 0.45);
     border-radius: 999px;
-    background-color: rgba(3, 47, 73, 0.7);
+    background-color: rgba(36, 92, 86, 0.78);
     color: var(--blanco);
     backdrop-filter: blur(8px);
 }
@@ -249,7 +246,7 @@ p + p {
 .historia {
     margin-top: 35px;
     overflow: hidden;
-    border: 1px solid #cbe7ee;
+    border: 1px solid #c9e3df;
     border-radius: var(--radio);
     background-color: var(--blanco);
     box-shadow: var(--sombra);
@@ -322,7 +319,7 @@ p + p {
 
 .servicio {
     padding: 30px 25px;
-    border: 1px solid rgba(0, 109, 143, 0.13);
+    border: 1px solid rgba(101, 185, 174, 0.22);
     border-radius: var(--radio);
     background-color: var(--blanco);
     box-shadow: var(--sombra);
@@ -333,7 +330,7 @@ p + p {
 
 .servicio:hover {
     transform: translateY(-6px);
-    box-shadow: 0 18px 40px rgba(6, 47, 79, 0.21);
+    box-shadow: 0 18px 40px rgba(36, 92, 86, 0.21);
 }
 
 .servicio__icono {
@@ -371,7 +368,7 @@ p + p {
     background:
         linear-gradient(
             140deg,
-            #e8fbff 0%,
+            #edf8f6 0%,
             #ffffff 65%
         );
 }
@@ -379,7 +376,7 @@ p + p {
 .diagnostico .contenedor {
     max-width: 850px;
     padding: 38px;
-    border: 1px solid #c8eaf0;
+    border: 1px solid #c8e5e0;
     border-radius: var(--radio);
     background-color: rgba(255, 255, 255, 0.86);
     box-shadow: var(--sombra);
@@ -396,7 +393,12 @@ p + p {
 
 .servicio-express {
     padding: 70px 0;
-    background-color: var(--casa-lool-beh);
+    background:
+        linear-gradient(
+            135deg,
+            #79c9bf,
+            #65b9ae
+        );
     color: var(--texto);
 }
 
@@ -416,7 +418,7 @@ p + p {
 }
 
 .servicio-express p {
-    color: var(--texto);
+    color: #173b37;
 }
 
 
@@ -431,9 +433,9 @@ p + p {
 
 .cta-final__contenido {
     padding: 52px 28px;
-    border: 1px solid #cfeaf1;
+    border: 1px solid #cfe7e3;
     border-radius: var(--radio);
-    background: linear-gradient(135deg, #edfafd 0%, #ffffff 60%);
+    background: linear-gradient(135deg, #f1f9f8 0%, #ffffff 60%);
     box-shadow: var(--sombra);
     text-align: center;
 }
@@ -507,7 +509,7 @@ p + p {
 }
 
 .ventana-cotizacion::backdrop {
-    background-color: rgba(3, 32, 52, 0.78);
+    background-color: rgba(23, 59, 55, 0.78);
     backdrop-filter: blur(4px);
 }
 
@@ -555,7 +557,7 @@ p + p {
 #formulario-cotizacion textarea {
     width: 100%;
     padding: 13px 14px;
-    border: 1px solid #bdd7df;
+    border: 1px solid #b9d8d3;
     border-radius: 12px;
     outline: none;
     background-color: var(--blanco);
@@ -569,7 +571,7 @@ p + p {
 #formulario-cotizacion select:focus,
 #formulario-cotizacion textarea:focus {
     border-color: var(--turquesa);
-    box-shadow: 0 0 0 4px rgba(0, 169, 198, 0.13);
+    box-shadow: 0 0 0 4px rgba(101, 185, 174, 0.22);
 }
 
 #formulario-cotizacion textarea {
@@ -582,7 +584,7 @@ p + p {
     gap: 12px;
     margin: 12px 0;
     padding: 18px;
-    border: 1px solid #cbe3e9;
+    border: 1px solid #c9e3df;
     border-radius: 14px;
 }
 
@@ -624,7 +626,7 @@ p + p {
 
 .pie {
     padding: 45px 0 110px;
-    background-color: #021f34;
+    background-color: #173b37;
     color: rgba(255, 255, 255, 0.76);
     text-align: center;
 }
