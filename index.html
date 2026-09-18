@@ -2,729 +2,253 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta
         name="description"
-        content="Servicio residencial de limpieza y mantenimiento preventivo de piscinas en Mérida."
+        content="Lool Beh Servicios en Mérida: limpieza de piscinas, traslados, hospedaje y cuidado de perros a domicilio."
     >
 
-    <title>Servicios Lool Beh Piscinas</title>
+    <title>Lool Beh Servicios</title>
 
-    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="inicio.css">
+    <script src="inicio.js" defer></script>
 </head>
 
+
+
 <body>
-
-    <!-- PORTADA -->
     <header class="portada">
+        <div class="contenedor">
+            <p class="portada__etiqueta">Mérida, Yucatán</p>
 
-        <!-- Selector de idioma -->
-        <nav
-            class="selector-idioma"
-            aria-label="Seleccionar idioma"
-        >
-            <button
-                id="idioma-es"
-                class="idioma activo"
-                type="button"
-                aria-pressed="true"
-            >
-                ES
-            </button>
+            <h1>Lool Beh Servicios</h1>
 
-            <span>|</span>
-
-            <button
-                id="idioma-en"
-                class="idioma"
-                type="button"
-                aria-pressed="false"
-            >
-                EN
-            </button>
-        </nav>
-
-        <div class="contenedor portada__contenido">
-
-            <p
-                class="portada__etiqueta"
-                data-es="Casa Lool Beh Piscinas · Mérida"
-                data-en="Lool Beh Pools · Mérida"
-            >
-                Lool Beh Piscinas · Mérida
+            <p class="portada__frase">
+                Soluciones cercanas y confiables para ti y los tuyos.
             </p>
 
-            <h1
-                data-es="Limpieza y aspirado de piscinas"
-                data-en="Pool cleaning and vacuuming"
-            >
-                Limpieza y aspirado de piscinas
-            </h1>
-
-            <p
-                class="portada__frase"
-                data-es="Tu piscina limpia y lista para disfrutar."
-                data-en="Your pool, clean and ready to enjoy."
-            >
-                Tu piscina limpia y lista para disfrutar.
-            </p>
-
-            <p
-                class="portada__compromiso"
-                data-es="Servicio puntual, cuidadoso y adaptado a tus necesidades."
-                data-en="Punctual, careful service tailored to your needs."
-            >
-                Servicio puntual, cuidadoso y adaptado a tus necesidades.
-            </p>
-
-            <a
-                class="boton-principal"
-                href="#servicios"
-                data-es="Solicita tu cotización"
-                data-en="Get your quote"
-            >
-                Solicita tu cotización
+            <a class="boton" href="#servicios">
+                Conoce nuestros servicios
             </a>
-
         </div>
     </header>
 
     <main>
+        <section
+            class="servicios contenedor"
+            id="servicios"
+            aria-labelledby="titulo-servicios"
+        >
+            <h2 id="titulo-servicios">Nuestros servicios</h2>
 
-        <!-- PRESENTACIÓN -->
-        <section class="presentacion">
-            <div class="contenedor">
+            <p class="servicios__introduccion">
+                Toca un servicio para descubrir cómo podemos ayudarte.
+            </p>
 
-                <p
-                    class="titulo-pequeno"
-                    data-es="Cuidamos tu piscina por ti"
-                    data-en="We take care of your pool"
-                >
-                    Cuidamos tu piscina por ti
-                </p>
+            <div class="servicios__lista">
 
-                <h2
-                    data-es="¿Tu piscina está lista para disfrutar?"
-                    data-en="Is your pool ready to enjoy?"
-                >
-                    ¿Tu piscina está lista para disfrutar?
-                </h2>
+                <!-- PISCINAS -->
+                <details class="servicio">
+                    <summary class="servicio__ovalo">
+                        <span class="servicio__icono" aria-hidden="true">
+                            🏊
+                        </span>
 
-                <p
-                    data-es="Ofrecemos limpieza y mantenimiento preventivo para ayudarte a conservar tu piscina en mejores condiciones."
-                    data-en="We provide cleaning and preventive maintenance to help you keep your pool in better condition."
-                >
-                    Ofrecemos limpieza y mantenimiento preventivo para
-                    ayudarte a conservar tu piscina en mejores condiciones.
-                </p>
+                        <span class="servicio__nombre">
+                            Limpieza y aspirado de piscinas
+                        </span>
 
-                <!-- Historia desplegable -->
-                <details class="historia">
-
-                    <summary
-                        data-es="Conoce nuestra historia"
-                        data-en="Discover our story"
-                    >
-                        Conoce nuestra historia
+                        <span class="servicio__indicador" aria-hidden="true">
+                            +
+                        </span>
                     </summary>
 
-                    <div class="historia__contenido">
-
-                        <h3
-                            data-es="¿Cómo nació Servicios Lool Beh Piscinas?"
-                            data-en="How was Servicios Lool Beh Pools created?"
-                        >
-                            ¿Cómo nació Servicios Lool Beh Piscinas?
-                        </h3>
-
-                        <p
-                            data-es="Durante ocho años al frente de un lugar de hospedaje en Mérida, he aprendido que mantener una piscina limpia no solamente requiere un buen trabajo, sino también puntualidad y compromiso."
-                            data-en="During eight years managing a guesthouse in Mérida, I have learned that keeping a pool clean requires not only good work, but also punctuality and commitment."
-                        >
-                            Durante ocho años al frente de un lugar de
-                            hospedaje en Mérida, he aprendido que mantener
-                            una piscina limpia no solamente requiere un buen
-                            trabajo, sino también puntualidad y compromiso.
+                    <div class="servicio__contenido">
+                        <p>
+                            Limpieza y aspirado de piscinas residenciales
+                            en Mérida. Consulta los servicios y solicita
+                            una cotización según las dimensiones y el
+                            estado de tu piscina.
                         </p>
 
-                        <p
-                            data-es="En nuestro alojamiento necesitábamos que la piscina estuviera preparada desde temprano, antes de que los huéspedes comenzaran a utilizarla. Sin embargo, en varias ocasiones fue difícil encontrar un servicio que llegara a la hora acordada y se adaptara a nuestras necesidades."
-                            data-en="At our guesthouse, we needed the pool to be ready early, before our guests began using it. However, on several occasions it was difficult to find a service that arrived at the agreed time and adapted to our needs."
-                        >
-                            En nuestro alojamiento necesitábamos que la
-                            piscina estuviera preparada desde temprano,
-                            antes de que los huéspedes comenzaran a
-                            utilizarla. Sin embargo, en varias ocasiones fue
-                            difícil encontrar un servicio que llegara a la
-                            hora acordada y se adaptara a nuestras
-                            necesidades.
+                        <a class="boton" href="piscinas/index.html">
+                            Ver servicio y cotizar
+                        </a>
+                    </div>
+                </details>
+
+                <!-- TRASLADOS -->
+                <details class="servicio">
+                    <summary class="servicio__ovalo">
+                        <span class="servicio__icono" aria-hidden="true">
+                            🚙
+                        </span>
+
+                        <span class="servicio__nombre">
+                            Traslados
+                        </span>
+
+                        <span class="servicio__indicador" aria-hidden="true">
+                            +
+                        </span>
+                    </summary>
+
+                    <div class="servicio__contenido">
+                        <p>
+                            Traslados al aeropuerto, dentro de Mérida
+                            y a destinos fuera de la ciudad.
                         </p>
 
-                        <p
-                            data-es="Por esta razón decidí adquirir mi propio equipo y comenzar a ocuparme personalmente de la piscina. Con el tiempo comprendí que otras personas podían encontrarse con la misma necesidad."
-                            data-en="For this reason, I decided to purchase my own equipment and begin taking care of the pool myself. Over time, I realized that other people might have the same need."
-                        >
-                            Por esta razón decidí adquirir mi propio equipo
-                            y comenzar a ocuparme personalmente de la
-                            piscina. Con el tiempo comprendí que otras
-                            personas podían encontrarse con la misma
-                            necesidad.
+                        <p class="servicio__aviso">
+                            Próximamente podrás consultar aquí
+                            los detalles y solicitar tu cotización.
+                        </p>
+                    </div>
+                </details>
+
+                <!-- HOSPEDAJE -->
+                <details class="servicio">
+                    <summary class="servicio__ovalo">
+                        <span class="servicio__icono" aria-hidden="true">
+                            🏡
+                        </span>
+
+                        <span class="servicio__nombre">
+                            Hospedaje
+                        </span>
+
+                        <span class="servicio__indicador" aria-hidden="true">
+                            +
+                        </span>
+                    </summary>
+
+                    <div class="servicio__contenido">
+                        <p>
+                            Consulta disponibilidad y reserva
+                            directamente con nosotros en Casa Lool Beh.
                         </p>
 
-                        <p
-                            data-es="Así nace Casa Lool Beh Piscinas: desde la experiencia real de cuidar una piscina utilizada por huéspedes y de comprender la importancia de que esté limpia y disponible en el momento necesario."
-                            data-en="That is how Casa Lool Beh Pools was created: from the real experience of caring for a pool used by guests and understanding the importance of having it clean and ready when needed."
-                        >
-                            Así nace <strong>Casa Lool Beh Piscinas</strong>:
-                            desde la experiencia real de cuidar una piscina
-                            utilizada por huéspedes y de comprender la
-                            importancia de que esté limpia y disponible en
-                            el momento necesario.
+                        <p class="servicio__aviso">
+                            Estamos preparando esta sección con
+                            información para tu estancia.
+                        </p>
+                    </div>
+                </details>
+
+                <!-- CUIDADO DE PERROS -->
+                <details class="servicio">
+                    <summary class="servicio__ovalo">
+                        <span class="servicio__icono" aria-hidden="true">
+                            🐕
+                        </span>
+
+                        <span class="servicio__nombre">
+                            Cuidado de perros a domicilio
+                        </span>
+
+                        <span class="servicio__indicador" aria-hidden="true">
+                            +
+                        </span>
+                    </summary>
+
+                    <div class="servicio__contenido">
+                        <p>
+                            Atención responsable para tus perros
+                            en la comodidad de tu hogar.
                         </p>
 
-                        <p
-                            class="historia__frase"
-                            data-es="No solamente cuidamos tu piscina: respetamos tu tiempo y tus necesidades."
-                            data-en="We do not only care for your pool: we respect your time and your needs."
-                        >
-                            No solamente cuidamos tu piscina: respetamos
-                            tu tiempo y tus necesidades.
+                        <p class="servicio__aviso">
+                            Próximamente encontrarás aquí los detalles
+                            del servicio y cómo solicitar una cotización.
                         </p>
-
                     </div>
                 </details>
 
             </div>
         </section>
-
-        <!-- SERVICIOS -->
-        <section id="servicios" class="servicios">
-            <div class="contenedor">
-
-                <p
-                    class="titulo-pequeno"
-                    data-es="Mantenimiento preventivo"
-                    data-en="Preventive maintenance"
-                >
-                    Mantenimiento preventivo
-                </p>
-
-                <h2
-                    data-es="¿Qué incluye nuestro servicio?"
-                    data-en="What does our service include?"
-                >
-                    ¿Qué incluye nuestro servicio?
-                </h2>
-
-                <div class="servicios__lista">
-
-                    <article class="servicio">
-
-                        <span
-                            class="servicio__icono"
-                            aria-hidden="true"
-                        >
-                            🧹
-                        </span>
-
-                        <div>
-                            <h3
-                                data-es="Aspirado minucioso del fondo"
-                                data-en="Thorough bottom vacuuming"
-                            >
-                                Aspirado minucioso del fondo
-                            </h3>
-
-                            <p
-                                data-es="Retiramos cuidadosamente la suciedad acumulada en el fondo de la piscina."
-                                data-en="We carefully remove dirt accumulated on the bottom of the pool."
-                            >
-                                Retiramos cuidadosamente la suciedad
-                                acumulada en el fondo de la piscina.
-                            </p>
-                        </div>
-
-                    </article>
-
-                    <article class="servicio">
-
-                        <span
-                            class="servicio__icono"
-                            aria-hidden="true"
-                        >
-                            🧺
-                        </span>
-
-                        <div>
-                            <h3
-                                data-es="Limpieza de canastillas"
-                                data-en="Basket cleaning"
-                            >
-                                Limpieza de canastillas
-                            </h3>
-
-                            <p
-                                data-es="Limpiamos las canastillas del skimmer y de la bomba."
-                                data-en="We clean the skimmer and pump baskets."
-                            >
-                                Limpiamos las canastillas del skimmer
-                                y de la bomba.
-                            </p>
-                        </div>
-
-                    </article>
-
-                    <article class="servicio">
-
-                        <span
-                            class="servicio__icono"
-                            aria-hidden="true"
-                        >
-                            🍃
-                        </span>
-
-                        <div>
-                            <h3
-                                data-es="Retiro de hojas y residuos"
-                                data-en="Removal of leaves and debris"
-                            >
-                                Retiro de hojas y residuos
-                            </h3>
-
-                            <p
-                                data-es="Retiramos las hojas y otros residuos presentes en la piscina."
-                                data-en="We remove leaves and other debris from the pool."
-                            >
-                                Retiramos las hojas y otros residuos
-                                presentes en la piscina.
-                            </p>
-                        </div>
-
-                    </article>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- DIAGNÓSTICO -->
-        <section class="diagnostico">
-            <div class="contenedor">
-
-                <p
-                    class="titulo-pequeno"
-                    data-es="Diagnóstico en la primera visita"
-                    data-en="Assessment during the first visit"
-                >
-                    Diagnóstico en la primera visita
-                </p>
-
-                <h2
-                    data-es="Revisamos las condiciones del agua"
-                    data-en="We assess the water conditions"
-                >
-                    Revisamos las condiciones del agua
-                </h2>
-
-                <p
-                    data-es="Evaluamos las condiciones generales del agua para determinar si requiere balance de pH o productos químicos específicos."
-                    data-en="We assess the general water conditions to determine whether pH balancing or specific chemicals are required."
-                >
-                    Evaluamos las condiciones generales del agua para
-                    determinar si requiere balance de pH o productos
-                    químicos específicos.
-                </p>
-
-                <p
-                    data-es="Si necesita algún tratamiento adicional, te proporcionaremos una cotización personalizada antes de realizarlo."
-                    data-en="If additional treatment is needed, we will provide a personalized quote before carrying it out."
-                >
-                    Si necesita algún tratamiento adicional, te
-                    proporcionaremos una cotización personalizada antes
-                    de realizarlo.
-                </p>
-
-            </div>
-        </section>
-
-        <!-- SERVICIO EXPRÉS -->
-        <section class="servicio-express">
-            <div class="contenedor servicio-express__contenido">
-
-                <span
-                    class="servicio-express__icono"
-                    aria-hidden="true"
-                >
-                    ⏱️
-                </span>
-
-                <div>
-                    <h2
-                        data-es="Servicio exprés de aspirado"
-                        data-en="Express vacuuming service"
-                    >
-                        Servicio exprés de aspirado
-                    </h2>
-
-                    <p
-                        data-es="Disponible en Mérida Centro con costo adicional y sujeto a disponibilidad."
-                        data-en="Available in Mérida Centro for an additional cost and subject to availability."
-                    >
-                        Disponible en Mérida Centro con costo adicional
-                        y sujeto a disponibilidad.
-                    </p>
-                </div>
-
-            </div>
-        </section>
-
     </main>
 
-    <section class="cta-final">
-        <div class="contenedor cta-final__contenido">
-            <p
-                class="titulo-pequeno"
-                data-es="Servicios completos"
-                data-en="Complete services"
-            >
-                Servicios completos
-            </p>
-
-            <h2
-                data-es="Conoce todos los servicios que Lool Beh te ofrece"
-                data-en="Discover all the services Lool Beh has to offer"
-            >
-                 Conoce otros servicios que Lool Beh ofrece
-            </h2>
-
-            <a
-                class="boton-principal boton-principal--secundario"
-                href="otros-servicios.html"
-                data-es="Ver otros servicios"
-                data-en="See other services"
-            >
-                Ver otros servicios
-            </a>
-        </div>
-    </section>
-
-    <!-- BOTÓN FLOTANTE -->
-    <button
-        id="abrir-formulario"
-        class="whatsapp-flotante"
-        type="button"
-        aria-label="Solicitar cotización por WhatsApp"
-    >
-        <span
-            class="whatsapp-flotante__icono"
-            aria-hidden="true"
-        >
-            ☎
-        </span>
-
-        <span
-            data-es="Cotiza con José Luis"
-            data-en="Get a quote"
-        >
-            Cotiza con José Luis
-        </span>
-    </button>
-
-    <!-- FORMULARIO -->
-    <dialog
-        id="ventana-cotizacion"
-        class="ventana-cotizacion"
-    >
-
-        <button
-            id="cerrar-formulario"
-            class="boton-cerrar"
-            type="button"
-            aria-label="Cerrar formulario"
-        >
-            ×
-        </button>
-
-        <h2
-            data-es="Hola, soy José Luis"
-            data-en="Hello, I am José Luis"
-        >
-            Hola, soy José Luis
-        </h2>
-
-        <p
-            class="presentacion-jose"
-            data-es="Soy el responsable de Servicios Lool Beh Piscinas. Será un gusto conocer las necesidades de tu piscina y ofrecerte una atención cercana, puntual y personalizada."
-            data-en="I am responsible for Servicios Lool Beh Pools. I will be happy to learn about your pool's needs and provide friendly, punctual and personalized service."
-        >
-            Soy el responsable de Servicios Lool Beh Piscinas. Será un gusto
-            conocer las necesidades de tu piscina y ofrecerte una atención
-            cercana, puntual y personalizada.
-        </p>
-
-        <p
-            data-es="Completa los siguientes datos y recibiré tu solicitud directamente por WhatsApp."
-            data-en="Complete the following information and I will receive your request directly through WhatsApp."
-        >
-            Completa los siguientes datos y recibiré tu solicitud
-            directamente por WhatsApp.
-        </p>
-
-        <form id="formulario-cotizacion">
-
-            <label
-                for="nombre"
-                data-es="Nombre"
-                data-en="Name"
-            >
-                Nombre
-            </label>
-
-            <input
-                id="nombre"
-                name="nombre"
-                type="text"
-                placeholder="Escribe tu nombre"
-                data-placeholder-es="Escribe tu nombre"
-                data-placeholder-en="Enter your name"
-                autocomplete="name"
-                required
-            >
-
-            <fieldset class="grupo-medidas">
-
-                <legend
-                    data-es="Medidas aproximadas de la piscina"
-                    data-en="Approximate pool dimensions"
-                >
-                    Medidas aproximadas de la piscina
-                </legend>
-
-                <div>
-                    <label
-                        for="largo"
-                        data-es="Largo"
-                        data-en="Length"
-                    >
-                        Largo
-                    </label>
-
-                    <input
-                        id="largo"
-                        name="largo"
-                        type="number"
-                        min="1"
-                        step="0.1"
-                        placeholder="Metros"
-                        data-placeholder-es="Metros"
-                        data-placeholder-en="Meters"
-                        required
-                    >
-                </div>
-
-                <div>
-                    <label
-                        for="ancho"
-                        data-es="Ancho"
-                        data-en="Width"
-                    >
-                        Ancho
-                    </label>
-
-                    <input
-                        id="ancho"
-                        name="ancho"
-                        type="number"
-                        min="1"
-                        step="0.1"
-                        placeholder="Metros"
-                        data-placeholder-es="Metros"
-                        data-placeholder-en="Meters"
-                        required
-                    >
-                </div>
-
-                <div>
-                    <label
-                        for="profundidad"
-                        data-es="Profundidad"
-                        data-en="Depth"
-                    >
-                        Profundidad
-                    </label>
-
-                    <input
-                        id="profundidad"
-                        name="profundidad"
-                        type="number"
-                        min="0.1"
-                        step="0.1"
-                        placeholder="Metros"
-                        data-placeholder-es="Metros"
-                        data-placeholder-en="Meters"
-                        required
-                    >
-                </div>
-
-            </fieldset>
-
-            <label
-                for="ubicacion"
-                data-es="Colonia o ubicación"
-                data-en="Neighborhood or location"
-            >
-                Colonia o ubicación
-            </label>
-
-            <input
-                id="ubicacion"
-                name="ubicacion"
-                type="text"
-                placeholder="Ejemplo: García Ginerés, Mérida"
-                data-placeholder-es="Ejemplo: García Ginerés, Mérida"
-                data-placeholder-en="Example: García Ginerés, Mérida"
-                required
-            >
-
-            <label
-                for="fecha"
-                data-es="Fecha preferida"
-                data-en="Preferred date"
-            >
-                Fecha preferida
-            </label>
-
-            <input
-                id="fecha"
-                name="fecha"
-                type="date"
-                required
-            >
-
-            <label
-                for="horario"
-                data-es="Horario aproximado"
-                data-en="Approximate time"
-            >
-                Horario aproximado
-            </label>
-
-            <select id="horario" name="horario" required>
-
-                <option
-                    value=""
-                    data-es="Selecciona un horario"
-                    data-en="Select a time"
-                >
-                    Selecciona un horario
-                </option>
-
-                <option
-                    value="morning"
-                    data-es="Por la mañana"
-                    data-en="Morning"
-                >
-                    Por la mañana
-                </option>
-
-                <option
-                    value="midday"
-                    data-es="Al mediodía"
-                    data-en="Midday"
-                >
-                    Al mediodía
-                </option>
-
-                <option
-                    value="afternoon"
-                    data-es="Por la tarde"
-                    data-en="Afternoon"
-                >
-                    Por la tarde
-                </option>
-
-                <option
-                    value="flexible"
-                    data-es="Tengo horario flexible"
-                    data-en="I have a flexible schedule"
-                >
-                    Tengo horario flexible
-                </option>
-
-            </select>
-
-            <label
-                for="comentarios"
-                data-es="Comentarios adicionales"
-                data-en="Additional comments"
-            >
-                Comentarios adicionales
-            </label>
-
-            <textarea
-                id="comentarios"
-                name="comentarios"
-                rows="4"
-                placeholder="Cuéntame brevemente cómo se encuentra tu piscina"
-                data-placeholder-es="Cuéntame brevemente cómo se encuentra tu piscina"
-                data-placeholder-en="Briefly describe the condition of your pool"
-            ></textarea>
-
-            <p
-                class="aviso-cita"
-                data-es="La fecha y el horario estarán sujetos a confirmación."
-                data-en="The requested date and time are subject to confirmation."
-            >
-                La fecha y el horario estarán sujetos a confirmación.
-            </p>
-
-            <button
-                class="boton-whatsapp"
-                type="submit"
-                data-es="Enviar solicitud por WhatsApp"
-                data-en="Send request through WhatsApp"
-            >
-                Enviar solicitud por WhatsApp
-            </button>
-
-        </form>
-    </dialog>
-
-    <!-- PIE DE PÁGINA -->
     <footer class="pie">
         <div class="contenedor">
-
-            <p>
-                <strong
-                    data-es="Lool Beh Piscinas"
-                    data-en="Lool Beh Pools"
-                >
-                    Lool Beh Piscinas
-                </strong>
-            </p>
-
-            <p
-                data-es="Servicio residencial de piscinas en Mérida."
-                data-en="Residential pool service in Mérida."
-            >
-                Servicio residencial de piscinas en Mérida.
-            </p>
-
-            <p
-                data-es="Atención personalizada: José Luis"
-                data-en="Personalized service: José Luis"
-            >
-                Atención personalizada: José Luis
-            </p>
-
+            <p><strong>Lool Beh Servicios</strong></p>
+            <p>Mérida, Yucatán</p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+   <button
+    type="button"
+    id="abrir-contacto"
+    class="whatsapp-flotante"
+    aria-haspopup="dialog"
+    aria-controls="ventana-contacto"
+>
+    WhatsApp · Contáctanos
+</button>
 
+<dialog
+    id="ventana-contacto"
+    class="ventana-contacto"
+    aria-labelledby="titulo-contacto"
+>
+    <button
+        type="button"
+        id="cerrar-contacto"
+        class="contacto-cerrar"
+        aria-label="Cerrar ventana de contacto"
+    >
+        ✕
+    </button>
+
+    <h2 id="titulo-contacto">¡Hola! ¿En qué podemos ayudarte?</h2>
+
+    <p>
+        Cuéntanos qué servicio necesitas o escribe tu consulta.
+        Con gusto te atenderemos.
+    </p>
+
+    <p>
+        También puedes
+        <a id="explorar-servicios" href="#servicios">
+            explorar nuestros servicios
+        </a>
+        en esta página para conocer más detalles.
+    </p>
+
+    <label for="consulta-contacto">Escribe aquí tu consulta</label>
+
+    <textarea
+        id="consulta-contacto"
+        rows="4"
+        maxlength="1500"
+        placeholder="Por ejemplo: necesito un traslado al aeropuerto…"
+    ></textarea>
+
+    <div class="contacto-opciones">
+        <a
+            class="boton"
+            data-contacto="jose"
+            href="https://wa.me/527772755235"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            WhatsApp con José Luis
+        </a>
+
+        <a
+            class="boton"
+            data-contacto="ananda"
+            href="https://wa.me/525585375197"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            WhatsApp con Ananda
+        </a>
+    </div>
+
+    <p class="contacto-aviso">
+        Podrás revisar el mensaje en WhatsApp antes de enviarlo.
+    </p>
+</dialog> 
 </body>
 </html>
