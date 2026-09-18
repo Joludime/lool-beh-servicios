@@ -3,12 +3,14 @@
    ================================================== */
 
 :root {
+    --casa-lool-beh: #65b9ae;
+    --casa-lool-beh-oscuro: #245c56;
     --azul-oscuro: #052e4b;
     --azul-principal: #006d8f;
     --azul-claro: #def7fb;
     --turquesa: #00a9c6;
-    --verde-whatsapp: #25d366;
-    --verde-oscuro: #128c4a;
+    --verde-whatsapp: #17e69a;
+    --verde-oscuro: #32e6a1;
     --blanco: #ffffff;
     --gris-claro: #f3f8fa;
     --gris-texto: #425466;
@@ -101,12 +103,13 @@ p + p {
     background:
         linear-gradient(
             90deg,
-            rgba(2, 35, 59, 0.95) 0%,
-            rgba(0, 74, 99, 0.78) 48%,
-            rgba(0, 91, 116, 0.25) 100%
+            rgba(36, 92, 86, 0.97) 0%,
+            rgba(36, 92, 86, 0.90) 48%,
+            rgba(101, 185, 174, 0.55) 100%
         ),
         url("imagenes/piscina-portada.jpg")
         center / cover no-repeat;
+    background-color: var(--casa-lool-beh-oscuro);
     color: var(--blanco);
 }
 
@@ -393,13 +396,8 @@ p + p {
 
 .servicio-express {
     padding: 70px 0;
-    background:
-        linear-gradient(
-            135deg,
-            #1ff0d5,
-            #06ba90
-        );
-    color: var(--blanco);
+    background-color: var(--casa-lool-beh);
+    color: var(--texto);
 }
 
 .servicio-express__contenido {
@@ -418,7 +416,7 @@ p + p {
 }
 
 .servicio-express p {
-    color: #d6f8fc;
+    color: var(--texto);
 }
 
 
