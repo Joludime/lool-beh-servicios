@@ -423,6 +423,34 @@ p + p {
 
 
 /* ==================================================
+   CTA FINAL
+   ================================================== */
+
+.cta-final {
+    padding: 0 0 80px;
+    background: linear-gradient(180deg, var(--blanco) 0%, var(--gris-claro) 100%);
+}
+
+.cta-final__contenido {
+    padding: 52px 28px;
+    border: 1px solid #cfeaf1;
+    border-radius: var(--radio);
+    background: linear-gradient(135deg, #edfafd 0%, #ffffff 60%);
+    box-shadow: var(--sombra);
+    text-align: center;
+}
+
+.cta-final h2 {
+    margin-bottom: 18px;
+}
+
+.boton-principal--secundario {
+    background-color: var(--azul-oscuro);
+    color: var(--blanco);
+}
+
+
+/* ==================================================
    BOTÓN FLOTANTE DE WHATSAPP
    ================================================== */
 
