@@ -357,22 +357,30 @@
                 data-en="← Lool Beh Services"
             >← Lool Beh Servicios</a>
 
+            
+            <!-- Selector de idioma -->
             <nav class="selector-idioma" aria-label="Idioma / Language">
-                <button
-                    class="idioma"
-                    type="button"
-                    data-idioma="es"
-                    aria-pressed="true"
-                    lang="es"
-                >Español</button>
+    
 
                 <button
-                    class="idioma"
-                    type="button"
-                    data-idioma="en"
-                    aria-pressed="false"
-                    lang="en"
-                >English</button>
+                id="idioma-es"
+                class="idioma activo"
+                type="button"
+                aria-pressed="true"
+                lang="es"
+            >
+                <span aria-hidden="true">🇲🇽</span> Español
+                </button>
+
+                <button
+                id="idioma-en"
+                class="idioma"
+                type="button"
+                aria-pressed="false"
+                lang="en"
+            >
+                <span aria-hidden="true">🇺🇸</span> English
+                </button>
             </nav>
         </div>
 
