@@ -84,25 +84,42 @@
 
         .selector-idioma {
             display: flex;
-            flex-wrap: nowrap;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
             gap: 8px;
+            max-width: 100%;
+            padding: 8px 12px;
+            border-radius: 24px;
+            background: var(--blanco);
+            color: var(--texto);
+            box-shadow: 0 10px 28px rgba(36, 92, 86, 0.12);
         }
 
         .idioma {
             min-height: 44px;
             padding: 8px 12px;
-            border: 1px solid var(--borde);
-            border-radius: 24px;
-            background: var(--blanco);
+            border: 1px solid transparent;
+            border-radius: 999px;
+            background: transparent;
             color: var(--turquesa-oscuro);
+            font-weight: 700;
             cursor: pointer;
             white-space: nowrap;
+        }
+
+        .idioma:hover {
+            background: var(--turquesa-claro);
         }
 
         .idioma[aria-pressed="true"] {
             background: var(--turquesa-oscuro);
             color: var(--blanco);
-            border-color: var(--turquesa-oscuro);
+        }
+
+        .idioma:focus-visible {
+            outline: 3px solid var(--texto);
+            outline-offset: 3px;
         }
 
         .portada {
@@ -365,6 +382,7 @@
                 <button
                 id="idioma-es"
                 class="idioma activo"
+                data-idioma="es"
                 type="button"
                 aria-pressed="true"
                 lang="es"
@@ -375,6 +393,7 @@
                 <button
                 id="idioma-en"
                 class="idioma"
+                data-idioma="en"
                 type="button"
                 aria-pressed="false"
                 lang="en"
@@ -718,6 +737,7 @@
             });
 
             document.querySelectorAll("[data-idioma]").forEach(boton => {
+                boton.classList.toggle("activo", boton.dataset.idioma === idioma);
                 boton.setAttribute(
                     "aria-pressed",
                     String(boton.dataset.idioma === idioma)
