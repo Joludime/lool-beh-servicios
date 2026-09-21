@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Cotiza tu traslado al aeropuerto, dentro de Mérida o a destinos fuera de la ciudad con Lool Beh Servicios."
+    >
+
+    <title>Traslados en Mérida | Lool Beh Servicios</title>
+
+    <style>
+        :root {
+            --turquesa: #007f89;
+            --turquesa-oscuro: #245c56;
+            --turquesa-claro: #e5f4f2;
+            --fondo: #f7faf9;
+            --texto: #243d39;
+            --blanco: #ffffff;
+            --borde: #c5ded9;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: var(--texto);
+            background: var(--fondo);
+            line-height: 1.6;
+        }
+
+        button,
+        input,
+        select,
+        textarea {
+            font: inherit;
+        }
+
+        a {
+            color: var(--turquesa-oscuro);
+        }
+
+        button,
+        a,
+        input,
+        select,
+        textarea,
+        summary {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        :focus-visible {
+            outline: 3px solid #ac6400;
+            outline-offset: 4px;
+        }
+
+        .contenedor {
+            width: min(100% - 36px, 960px);
+            margin-inline: auto;
+        }
+
+        .barra-superior {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+            padding-block: 20px;
+        }
+
+        .volver {
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .selector-idioma {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 8px;
+        }
+
+        .idioma {
+            min-height: 44px;
+            padding: 8px 12px;
+            border: 1px solid var(--borde);
+            border-radius: 24px;
+            background: var(--blanco);
+            color: var(--turquesa-oscuro);
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        .idioma[aria-pressed="true"] {
+            background: var(--turquesa-oscuro);
+            color: var(--blanco);
+            border-color: var(--turquesa-oscuro);
+        }
+
+        .portada {
+            padding: 55px 0 65px;
+            background: var(--turquesa-claro);
+            text-align: center;
+        }
+
+        .etiqueta {
+            margin: 0 0 12px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: var(--turquesa-oscuro);
+            line-height: 1.2;
+        }
+
+        h1 {
+            margin: 0 0 20px;
+            font-size: clamp(2.2rem, 7vw, 3.8rem);
+        }
+
+        h2 {
+            margin: 0 0 18px;
+            font-size: clamp(1.6rem, 4vw, 2.1rem);
+        }
+
+        .portada__texto {
+            max-width: 620px;
+            margin: 0 auto 28px;
+            font-size: 1.1rem;
+        }
+
+        .boton {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 48px;
+            padding: 13px 24px;
+            border: 0;
+            border-radius: 28px;
+            background: var(--turquesa-oscuro);
+            color: var(--blanco);
+            font-weight: 700;
+            text-decoration: none;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .boton:hover {
+            background: var(--turquesa);
+        }
+
+        .seccion {
+            padding-block: 52px;
+            scroll-margin-top: 24px;
+        }
+
+        .introduccion {
+            margin: 0 0 26px;
+        }
+
+        .servicios {
+            display: grid;
+            gap: 14px;
+        }
+
+        .servicio {
+            overflow: hidden;
+            border: 1px solid var(--borde);
+            border-radius: 24px;
+            background: var(--blanco);
+        }
+
+        .servicio summary {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 22px;
+            cursor: pointer;
+            list-style: none;
+        }
+
+        .servicio summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .servicio summary::after {
+            content: "+";
+            margin-left: auto;
+            font-size: 1.6rem;
+            color: var(--turquesa-oscuro);
+        }
+
+        .servicio[open] summary::after {
+            content: "−";
+        }
+
+        .servicio__icono {
+            font-size: 1.7rem;
+            flex-shrink: 0;
+        }
+
+        .servicio__titulo {
+            display: block;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--turquesa-oscuro);
+        }
+
+        .servicio__subtitulo {
+            display: block;
+            margin-top: 4px;
+            font-size: 0.95rem;
+        }
+
+        .servicio__contenido {
+            margin: 0;
+            padding: 0 22px 24px;
+        }
+
+        .cotizacion {
+            padding: clamp(22px, 5vw, 40px);
+            border: 1px solid var(--borde);
+            border-radius: 28px;
+            background: var(--blanco);
+        }
+
+        .formulario {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 20px;
+            margin-top: 28px;
+        }
+
+        .campo {
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+            min-width: 0;
+        }
+
+        .campo--completo,
+        .formulario__final {
+            grid-column: 1 / -1;
+        }
+
+        label {
+            font-weight: 700;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            min-width: 0;
+            min-height: 48px;
+            padding: 12px;
+            border: 1px solid #91b5ae;
+            border-radius: 12px;
+            background: var(--blanco);
+            color: var(--texto);
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        .aviso {
+            margin: 14px 0 0;
+            font-size: 0.9rem;
+        }
+
+        .pie {
+            padding: 28px 0 110px;
+            text-align: center;
+            background: var(--turquesa-claro);
+        }
+
+        .pie p {
+            margin: 5px 0;
+        }
+
+        .whatsapp-flotante {
+            position: fixed;
+            right: 18px;
+            bottom: 18px;
+            bottom: calc(18px + env(safe-area-inset-bottom));
+            z-index: 10;
+            max-width: calc(100% - 36px);
+            padding: 13px 20px;
+            border-radius: 30px;
+            background: var(--turquesa-oscuro);
+            color: var(--blanco);
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 4px 18px rgb(0 0 0 / 18%);
+        }
+
+        @media (max-width: 600px) {
+            .barra-superior {
+                justify-content: center;
+            }
+
+            .volver {
+                width: 100%;
+                text-align: center;
+            }
+
+            .portada {
+                padding-block: 36px 46px;
+            }
+
+            .seccion {
+                padding-block: 36px;
+            }
+
+            .formulario {
+                grid-template-columns: 1fr;
+            }
+
+            .formulario__final .boton {
+                width: 100%;
+            }
+
+            .servicio summary {
+                padding: 18px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="contenedor barra-superior">
+            <a
+                class="volver"
+                href="../index.html"
+                data-es="← Lool Beh Servicios"
+                data-en="← Lool Beh Services"
+            >← Lool Beh Servicios</a>
+
+            <nav class="selector-idioma" aria-label="Idioma / Language">
+                <button
+                    class="idioma"
+                    type="button"
+                    data-idioma="es"
+                    aria-pressed="true"
+                    lang="es"
+                >Español</button>
+
+                <button
+                    class="idioma"
+                    type="button"
+                    data-idioma="en"
+                    aria-pressed="false"
+                    lang="en"
+                >English</button>
+            </nav>
+        </div>
+
+        <div class="portada">
+            <div class="contenedor">
+                <p class="etiqueta">Lool Beh · Mérida, Yucatán</p>
+
+                <h1
+                    data-es="Traslados en Mérida"
+                    data-en="Transfers in Mérida"
+                >Traslados en Mérida</h1>
+
+                <p
+                    class="portada__texto"
+                    data-es="Al aeropuerto, por la ciudad o hacia tu próximo destino. Cuéntanos tu plan y consulta disponibilidad y precio."
+                    data-en="To the airport, around the city or on to your next destination. Tell us your plans and ask about availability and pricing."
+                >
+                    Al aeropuerto, por la ciudad o hacia tu próximo destino.
+                    Cuéntanos tu plan y consulta disponibilidad y precio.
+                </p>
+
+                <a
+                    class="boton"
+                    href="#cotizacion"
+                    data-es="Cotizar mi traslado"
+                    data-en="Get a transfer quote"
+                >Cotizar mi traslado</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="contenedor">
+        <section class="seccion" aria-labelledby="titulo-servicios">
+            <h2
+                id="titulo-servicios"
+                data-es="¿A dónde necesitas ir?"
+                data-en="Where do you need to go?"
+            >¿A dónde necesitas ir?</h2>
+
+            <p
+                class="introduccion"
+                data-es="Abre una opción para conocer más."
+                data-en="Select an option to find out more."
+            >Abre una opción para conocer más.</p>
+
+            <div class="servicios">
+                <details class="servicio">
+                    <summary>
+                        <span class="servicio__icono" aria-hidden="true">✈️</span>
+
+                        <span>
+                            <span
+                                class="servicio__titulo"
+                                data-es="Aeropuerto"
+                                data-en="Airport"
+                            >Aeropuerto</span>
+
+                            <span
+                                class="servicio__subtitulo"
+                                data-es="Traslados desde y hacia el aeropuerto de Mérida."
+                                data-en="Transfers to and from Mérida Airport."
+                            >Traslados desde y hacia el aeropuerto de Mérida.</span>
+                        </span>
+                    </summary>
+
+                    <p
+                        class="servicio__contenido"
+                        data-es="Indícanos tu dirección de recogida o destino, la fecha y la hora. Si llegas en avión, incluye tu número de vuelo para coordinar los detalles."
+                        data-en="Tell us your pickup address or destination, date and time. If you are arriving by plane, include your flight number so we can coordinate the details."
+                    >
+                        Indícanos tu dirección de recogida o destino, la fecha
+                        y la hora. Si llegas en avión, incluye tu número de
+                        vuelo para coordinar los detalles.
+                    </p>
+                </details>
+
+                <details class="servicio">
+                    <summary>
+                        <span class="servicio__icono" aria-hidden="true">🚙</span>
+
+                        <span>
+                            <span
+                                class="servicio__titulo"
+                                data-es="Dentro de Mérida"
+                                data-en="Around Mérida"
+                            >Dentro de Mérida</span>
+
+                            <span
+                                class="servicio__subtitulo"
+                                data-es="Traslados entre distintos puntos de la ciudad."
+                                data-en="Transfers between locations across the city."
+                            >Traslados entre distintos puntos de la ciudad.</span>
+                        </span>
+                    </summary>
+
+                    <p
+                        class="servicio__contenido"
+                        data-es="Comparte el punto de salida, el destino y el horario que necesitas. Si requieres un viaje de regreso o alguna parada, indícalo al solicitar tu cotización."
+                        data-en="Share your pickup location, destination and preferred time. Let us know if you need a return trip or any stops when requesting your quote."
+                    >
+                        Comparte el punto de salida, el destino y el horario
+                        que necesitas. Si requieres un viaje de regreso o
+                        alguna parada, indícalo al solicitar tu cotización.
+                    </p>
+                </details>
+
+                <details class="servicio">
+                    <summary>
+                        <span class="servicio__icono" aria-hidden="true">🌿</span>
+
+                        <span>
+                            <span
+                                class="servicio__titulo"
+                                data-es="Fuera de la ciudad"
+                                data-en="Beyond the city"
+                            >Fuera de la ciudad</span>
+
+                            <span
+                                class="servicio__subtitulo"
+                                data-es="Consulta tu ruta y planea tu traslado."
+                                data-en="Ask about your route and plan your transfer."
+                            >Consulta tu ruta y planea tu traslado.</span>
+                        </span>
+                    </summary>
+
+                    <p
+                        class="servicio__contenido"
+                        data-es="Cuéntanos qué destino quieres visitar, cuántas personas viajan y si necesitas solo ida o también regreso. Revisaremos contigo la disponibilidad y el precio de la ruta."
+                        data-en="Tell us where you would like to go, how many people are travelling and whether you need a one-way or return trip. We will discuss route availability and pricing with you."
+                    >
+                        Cuéntanos qué destino quieres visitar, cuántas personas
+                        viajan y si necesitas solo ida o también regreso.
+                        Revisaremos contigo la disponibilidad y el precio
+                        de la ruta.
+                    </p>
+                </details>
+            </div>
+        </section>
+
+        <section
+            class="seccion"
+            id="cotizacion"
+            aria-labelledby="titulo-cotizacion"
+        >
+            <div class="cotizacion">
+                <h2
+                    id="titulo-cotizacion"
+                    data-es="Cuéntanos tu próximo traslado"
+                    data-en="Tell us about your next trip"
+                >Cuéntanos tu próximo traslado</h2>
+
+                <p
+                    data-es="Completa los datos y abre tu solicitud en WhatsApp. Podrás revisar el mensaje antes de enviarlo."
+                    data-en="Fill in the details and open your request in WhatsApp. You can review the message before sending it."
+                >
+                    Completa los datos y abre tu solicitud en WhatsApp.
+                    Podrás revisar el mensaje antes de enviarlo.
+                </p>
+
+                <form id="formulario-traslado" class="formulario">
+                    <div class="campo">
+                        <label for="nombre" data-es="Tu nombre" data-en="Your name">
+                            Tu nombre
+                        </label>
+                        <input
+                            id="nombre"
+                            name="nombre"
+                            autocomplete="given-name"
+                            maxlength="80"
+                            required
+                        >
+                    </div>
+
+                    <div class="campo">
+                        <label
+                            for="tipo"
+                            data-es="Tipo de traslado"
+                            data-en="Transfer type"
+                        >Tipo de traslado</label>
+
+                        <select id="tipo" name="tipo">
+                            <option
+                                value="aeropuerto"
+                                data-es="Aeropuerto"
+                                data-en="Airport"
+                            >Aeropuerto</option>
+
+                            <option
+                                value="ciudad"
+                                data-es="Dentro de Mérida"
+                                data-en="Around Mérida"
+                            >Dentro de Mérida</option>
+
+                            <option
+                                value="fuera"
+                                data-es="Fuera de la ciudad"
+                                data-en="Beyond the city"
+                            >Fuera de la ciudad</option>
+                        </select>
+                    </div>
+
+                    <div class="campo">
+                        <label
+                            for="origen"
+                            data-es="Lugar de recogida"
+                            data-en="Pickup location"
+                        >Lugar de recogida</label>
+                        <input id="origen" name="origen" maxlength="200" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="destino" data-es="Destino" data-en="Destination">
+                            Destino
+                        </label>
+                        <input id="destino" name="destino" maxlength="200" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="fecha" data-es="Fecha" data-en="Date">Fecha</label>
+                        <input id="fecha" name="fecha" type="date" required>
+                    </div>
+
+                    <div class="campo">
+                        <label
+                            for="hora"
+                            data-es="Hora de recogida (hora de Mérida)"
+                            data-en="Pickup time (Mérida local time)"
+                        >Hora de recogida (hora de Mérida)</label>
+                        <input id="hora" name="hora" type="time" required>
+                    </div>
+
+                    <div class="campo">
+                        <label
+                            for="pasajeros"
+                            data-es="Número de pasajeros"
+                            data-en="Number of passengers"
+                        >Número de pasajeros</label>
+                        <input
+                            id="pasajeros"
+                            name="pasajeros"
+                            type="number"
+                            min="1"
+                            step="1"
+                            required
+                        >
+                    </div>
+
+                    <div class="campo">
+                        <label
+                            for="equipaje"
+                            data-es="Equipaje: cantidad y tamaño"
+                            data-en="Luggage: quantity and size"
+                        >Equipaje: cantidad y tamaño</label>
+                        <input
+                            id="equipaje"
+                            name="equipaje"
+                            maxlength="200"
+                            required
+                        >
+                    </div>
+
+                    <div class="campo campo--completo">
+                        <label
+                            for="notas"
+                            data-es="Detalles adicionales (opcional)"
+                            data-en="Additional details (optional)"
+                        >Detalles adicionales (opcional)</label>
+
+                        <textarea
+                            id="notas"
+                            name="notas"
+                            rows="3"
+                            maxlength="700"
+                            placeholder="Número de vuelo, regreso, paradas…"
+                            data-placeholder-es="Número de vuelo, regreso, paradas…"
+                            data-placeholder-en="Flight number, return trip, stops…"
+                        ></textarea>
+                    </div>
+
+                    <div class="formulario__final">
+                        <button
+                            class="boton"
+                            type="submit"
+                            data-es="Solicitar cotización por WhatsApp"
+                            data-en="Request a quote on WhatsApp"
+                        >Solicitar cotización por WhatsApp</button>
+
+                        <p
+                            class="aviso"
+                            data-es="Esta solicitud no confirma una reserva. Te confirmaremos disponibilidad, precio y detalles por WhatsApp."
+                            data-en="This request does not confirm a booking. We will confirm availability, pricing and details on WhatsApp."
+                        >
+                            Esta solicitud no confirma una reserva.
+                            Te confirmaremos disponibilidad, precio
+                            y detalles por WhatsApp.
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="pie">
+        <div class="contenedor">
+            <p><strong>Lool Beh Servicios</strong></p>
+            <p>Mérida, Yucatán</p>
+            <a
+                href="../index.html"
+                data-es="Conoce otros servicios de Lool Beh"
+                data-en="Explore other Lool Beh services"
+            >Conoce otros servicios de Lool Beh</a>
+        </div>
+    </footer>
+
+    <a
+        id="whatsapp-directo"
+        class="whatsapp-flotante"
+        href="https://wa.me/525585375196?text=Hola%2C%20quisiera%20consultar%20un%20traslado."
+        target="_blank"
+        rel="noopener noreferrer"
+        data-es="WhatsApp · Contáctanos"
+        data-en="WhatsApp · Contact us"
+    >WhatsApp · Contáctanos</a>
+
+    <script>
+        const telefono = "525585375196";
+        let idiomaActual = "es";
+
+        function cambiarIdioma(idioma) {
+            idiomaActual = idioma;
+            document.documentElement.lang = idioma;
+
+            document.querySelectorAll("[data-es][data-en]").forEach(elemento => {
+                elemento.textContent = elemento.dataset[idioma];
+            });
+
+            document.querySelectorAll("[data-idioma]").forEach(boton => {
+                boton.setAttribute(
+                    "aria-pressed",
+                    String(boton.dataset.idioma === idioma)
+                );
+            });
+
+            const notas = document.getElementById("notas");
+            notas.placeholder = idioma === "es"
+                ? notas.dataset.placeholderEs
+                : notas.dataset.placeholderEn;
+
+            document.title = idioma === "es"
+                ? "Traslados en Mérida | Lool Beh Servicios"
+                : "Transfers in Mérida | Lool Beh Services";
+
+            const saludo = idioma === "es"
+                ? "Hola, quisiera consultar un traslado."
+                : "Hello, I would like to ask about a transfer.";
+
+            document.getElementById("whatsapp-directo").href =
+                `https://wa.me/${telefono}?text=${encodeURIComponent(saludo)}`;
+        }
+
+        document.querySelectorAll("[data-idioma]").forEach(boton => {
+            boton.addEventListener("click", () => {
+                cambiarIdioma(boton.dataset.idioma);
+            });
+        });
+
+        document.getElementById("formulario-traslado").addEventListener(
+            "submit",
+            function (evento) {
+                evento.preventDefault();
+
+                const valor = id => document.getElementById(id).value.trim();
+                const selectorTipo = document.getElementById("tipo");
+                const tipo = selectorTipo.options[selectorTipo.selectedIndex].text;
+                const partesFecha = valor("fecha").split("-");
+                const fecha = idiomaActual === "es"
+                    ? `${partesFecha[2]}/${partesFecha[1]}/${partesFecha[0]}`
+                    : valor("fecha");
+
+                const lineas = idiomaActual === "es"
+                    ? [
+                        "Hola, quisiera cotizar un traslado con Lool Beh.",
+                        "",
+                        `Nombre: ${valor("nombre")}`,
+                        `Tipo de traslado: ${tipo}`,
+                        `Recogida: ${valor("origen")}`,
+                        `Destino: ${valor("destino")}`,
+                        `Fecha: ${fecha}`,
+                        `Hora de recogida (Mérida): ${valor("hora")}`,
+                        `Pasajeros: ${valor("pasajeros")}`,
+                        `Equipaje: ${valor("equipaje")}`
+                    ]
+                    : [
+                        "Hello, I would like a transfer quote from Lool Beh.",
+                        "",
+                        `Name: ${valor("nombre")}`,
+                        `Transfer type: ${tipo}`,
+                        `Pickup: ${valor("origen")}`,
+                        `Destination: ${valor("destino")}`,
+                        `Date: ${fecha}`,
+                        `Pickup time (Mérida): ${valor("hora")}`,
+                        `Passengers: ${valor("pasajeros")}`,
+                        `Luggage: ${valor("equipaje")}`
+                    ];
+
+                if (valor("notas")) {
+                    lineas.push(
+                        `${idiomaActual === "es" ? "Detalles" : "Details"}: ${valor("notas")}`
+                    );
+                }
+
+                const url =
+                    `https://wa.me/${telefono}?text=${encodeURIComponent(lineas.join("\n"))}`;
+
+                window.open(url, "_blank", "noopener,noreferrer");
+            }
+        );
+    </script>
+</body>
+</html>
