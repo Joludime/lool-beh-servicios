@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Cuidado de perros a domicilio en Mérida con Lool Beh. Visitas por horas y cuidado nocturno en tu hogar. Consulta con Ananda."
+    >
+
+    <title>Cuidado de perros | Lool Beh Servicios</title>
+
+    <style>
+        :root {
+            --turquesa: #007f89;
+            --oscuro: #245c56;
+            --claro: #e5f4f2;
+            --fondo: #f7faf9;
+            --texto: #243d39;
+            --borde: #c5ded9;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background: var(--fondo);
+            color: var(--texto);
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        button,
+        input,
+        select,
+        textarea {
+            font: inherit;
+        }
+
+        a {
+            color: var(--oscuro);
+        }
+
+        :focus-visible {
+            outline: 3px solid #ac6400;
+            outline-offset: 4px;
+        }
+
+        .contenedor {
+            width: min(100% - 36px, 960px);
+            margin-inline: auto;
+        }
+
+        .barra {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding-block: 20px;
+        }
+
+        .volver {
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .idiomas {
+            display: flex;
+            gap: 8px;
+        }
+
+        .idioma {
+            min-height: 44px;
+            padding: 8px 14px;
+            border: 1px solid var(--borde);
+            border-radius: 24px;
+            background: white;
+            color: var(--oscuro);
+            cursor: pointer;
+        }
+
+        .idioma[aria-pressed="true"] {
+            background: var(--oscuro);
+            color: white;
+        }
+
+        .portada {
+            padding: 54px 0;
+            background: var(--claro);
+            text-align: center;
+        }
+
+        .etiqueta {
+            margin: 0 0 14px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+        }
+
+        h1,
+        h2 {
+            color: var(--oscuro);
+            line-height: 1.2;
+        }
+
+        h1 {
+            max-width: 760px;
+            margin: 0 auto 22px;
+            font-size: clamp(2rem, 6vw, 3.3rem);
+        }
+
+        h2 {
+            margin: 0 0 20px;
+            font-size: clamp(1.5rem, 4vw, 2rem);
+        }
+
+        .portada__texto {
+            max-width: 620px;
+            margin: 0 auto 18px;
+            font-size: 1.15rem;
+        }
+
+        .portada__detalle {
+            margin: 0 auto 28px;
+        }
+
+        .boton {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 48px;
+            padding: 13px 24px;
+            border: 0;
+            border-radius: 28px;
+            background: var(--oscuro);
+            color: white;
+            font-weight: 700;
+            text-decoration: none;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .boton:hover {
+            background: var(--turquesa);
+        }
+
+        .seccion {
+            padding-block: 42px;
+            scroll-margin-top: 20px;
+        }
+
+        .desplegables {
+            display: grid;
+            gap: 14px;
+        }
+
+        details {
+            border: 1px solid var(--borde);
+            border-radius: 24px;
+            background: white;
+            overflow: hidden;
+        }
+
+        summary {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 21px;
+            color: var(--oscuro);
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            list-style: none;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::after {
+            content: "+";
+            margin-left: auto;
+            font-size: 1.5rem;
+        }
+
+        details[open] summary::after {
+            content: "−";
+        }
+
+        .contenido {
+            padding: 0 22px 22px;
+        }
+
+        .contenido p:first-child {
+            margin-top: 0;
+        }
+
+        .contenido p:last-child {
+            margin-bottom: 0;
+        }
+
+        .contenido ul,
+        .pasos {
+            padding-left: 22px;
+        }
+
+        li + li {
+            margin-top: 10px;
+        }
+
+        .nota {
+            padding: 16px;
+            border-radius: 14px;
+            background: var(--claro);
+        }
+
+        .cotizacion {
+            padding: clamp(20px, 5vw, 38px);
+            border: 1px solid var(--borde);
+            border-radius: 26px;
+            background: white;
+        }
+
+        .formulario {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 20px;
+            margin-top: 26px;
+        }
+
+        .campo {
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+            min-width: 0;
+        }
+
+        .completo {
+            grid-column: 1 / -1;
+        }
+
+        label {
+            font-weight: 700;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            min-width: 0;
+            min-height: 48px;
+            padding: 12px;
+            border: 1px solid #91b5ae;
+            border-radius: 12px;
+            background: white;
+            color: var(--texto);
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        .ayuda,
+        .aviso {
+            font-size: 0.9rem;
+        }
+
+        .ayuda {
+            margin: 0;
+        }
+
+        .aviso {
+            margin: 14px 0 0;
+        }
+
+        footer {
+            padding: 30px 0 110px;
+            text-align: center;
+            background: var(--claro);
+        }
+
+        footer p {
+            margin: 6px 0;
+        }
+
+        .whatsapp {
+            position: fixed;
+            right: 18px;
+            bottom: 18px;
+            bottom: calc(18px + env(safe-area-inset-bottom));
+            z-index: 10;
+            max-width: calc(100% - 36px);
+            padding: 13px 20px;
+            border-radius: 28px;
+            background: var(--oscuro);
+            color: white;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 4px 18px rgb(0 0 0 / 18%);
+        }
+
+        @media (max-width: 600px) {
+            .barra {
+                justify-content: center;
+            }
+
+            .volver {
+                width: 100%;
+                text-align: center;
+            }
+
+            .portada {
+                padding-block: 36px;
+            }
+
+            .seccion {
+                padding-block: 30px;
+            }
+
+            .formulario {
+                grid-template-columns: 1fr;
+            }
+
+            .formulario .boton {
+                width: 100%;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="contenedor barra">
+            <a class="volver" href="../index.html">
+                ← Lool Beh Servicios
+            </a>
+
+            <nav class="idiomas" aria-label="Idioma / Language">
+                <button
+                    class="idioma"
+                    type="button"
+                    data-idioma="es"
+                    aria-pressed="true"
+                    lang="es"
+                >Español</button>
+
+                <button
+                    class="idioma"
+                    type="button"
+                    data-idioma="en"
+                    aria-pressed="false"
+                    lang="en"
+                >English</button>
+            </nav>
+        </div>
+
+        <div class="portada">
+            <div class="contenedor">
+                <p class="etiqueta">Lool Beh · Mérida, Yucatán</p>
+
+                <h1
+                    data-es="Cuidado de perros a domicilio"
+                    data-en="Dog care in your own home"
+                >Cuidado de perros a domicilio</h1>
+
+                <p
+                    class="portada__texto"
+                    data-es="Cuando tú no puedes estar, te ayudamos a cuidarlos en su propio hogar."
+                    data-en="When you can't be there, we help care for your dogs in the comfort of their own home."
+                >
+                    Cuando tú no puedes estar, te ayudamos
+                    a cuidarlos en su propio hogar.
+                </p>
+
+                <p
+                    class="portada__detalle"
+                    data-es="Visitas por horas y cuidado nocturno, según sus necesidades."
+                    data-en="Hourly visits and overnight care, tailored to their needs."
+                >Visitas por horas y cuidado nocturno, según sus necesidades.</p>
+
+                <a
+                    class="boton"
+                    href="#cotizacion"
+                    data-es="Consultar con Ananda"
+                    data-en="Ask Ananda"
+                >Consultar con Ananda</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="contenedor">
+        <section class="seccion" aria-labelledby="titulo-cuidados">
+            <h2
+                id="titulo-cuidados"
+                data-es="Compañía y cuidado en su entorno"
+                data-en="Companionship and care in familiar surroundings"
+            >Compañía y cuidado en su entorno</h2>
+
+            <div class="desplegables">
+                <details>
+                    <summary>
+                        <span aria-hidden="true">🐾</span>
+                        <span
+                            data-es="¿Qué incluye el cuidado?"
+                            data-en="What does the care include?"
+                        >¿Qué incluye el cuidado?</span>
+                    </summary>
+
+                    <div class="contenido">
+                        <ul>
+                            <li
+                                data-es="Alimentación según sus horarios e indicaciones."
+                                data-en="Feeding according to their routine and your instructions."
+                            >Alimentación según sus horarios e indicaciones.</li>
+
+                            <li
+                                data-es="Cambio de agua para mantenerla limpia y fresca."
+                                data-en="Fresh, clean drinking water."
+                            >Cambio de agua para mantenerla limpia y fresca.</li>
+
+                            <li
+                                data-es="Compañía y momentos de juego según su edad y energía."
+                                data-en="Companionship and play suited to their age and energy."
+                            >Compañía y momentos de juego según su edad y energía.</li>
+
+                            <li
+                                data-es="Paseos durante el cuidado, de acuerdo con su rutina y las condiciones acordadas."
+                                data-en="Walks during the care period, following their routine and our agreed arrangements."
+                            >
+                                Paseos durante el cuidado, de acuerdo con
+                                su rutina y las condiciones acordadas.
+                            </li>
+
+                            <li
+                                data-es="Limpieza básica del área que utiliza tu perro."
+                                data-en="Basic cleaning of your dog's area."
+                            >Limpieza básica del área que utiliza tu perro.</li>
+                        </ul>
+
+                        <p
+                            class="nota"
+                            data-es="Los paseos forman parte del cuidado contratado. Por el momento no ofrecemos paseos como servicio independiente."
+                            data-en="Walks are included as part of the booked care. We do not currently offer a separate dog-walking service."
+                        >
+                            Los paseos forman parte del cuidado contratado.
+                            Por el momento no ofrecemos paseos como servicio
+                            independiente.
+                        </p>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>
+                        <span aria-hidden="true">🤝</span>
+                        <span
+                            data-es="Primero nos conocemos"
+                            data-en="Let's meet first"
+                        >Primero nos conocemos</span>
+                    </summary>
+
+                    <div class="contenido">
+                        <p
+                            data-es="El servicio incluye una visita inicial para que tu perro conozca a Ananda, observar cómo se siente con ella y revisar juntos sus rutinas y necesidades."
+                            data-en="The service includes an initial meet-and-greet so your dog can meet Ananda, we can see how comfortable they feel with her, and we can discuss their routine and needs."
+                        >
+                            El servicio incluye una visita inicial para
+                            que tu perro conozca a Ananda, observar cómo se
+                            siente con ella y revisar juntos sus rutinas
+                            y necesidades.
+                        </p>
+
+                        <p
+                            data-es="Si requiere cuidados especiales, cuéntanos cuáles son. En esta visita valoraremos si podemos atenderlos y acordaremos los detalles antes de confirmar el servicio."
+                            data-en="If your dog needs special care, tell us about it. During this visit, we will assess whether we can meet those needs and agree on the details before confirming the service."
+                        >
+                            Si requiere cuidados especiales, cuéntanos
+                            cuáles son. En esta visita valoraremos si
+                            podemos atenderlos y acordaremos los detalles
+                            antes de confirmar el servicio.
+                        </p>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>
+                        <span aria-hidden="true">🏡</span>
+                        <span
+                            data-es="Visitas por horas o cuidado nocturno"
+                            data-en="Hourly visits or overnight care"
+                        >Visitas por horas o cuidado nocturno</span>
+                    </summary>
+
+                    <div class="contenido">
+                        <p
+                            data-es="Visitas por horas: coordinamos los días, la duración y la frecuencia de las visitas para acompañar y cuidar a tu perro."
+                            data-en="Hourly visits: we arrange the days, length and frequency of visits to keep your dog company and care for them."
+                        >
+                            Visitas por horas: coordinamos los días,
+                            la duración y la frecuencia de las visitas
+                            para acompañar y cuidar a tu perro.
+                        </p>
+
+                        <p
+                            data-es="Cuidado nocturno: Ananda se queda a dormir en tu domicilio durante las noches acordadas. Los horarios de llegada, salida y la atención durante el día se definen al cotizar."
+                            data-en="Overnight care: Ananda stays overnight in your home on the agreed nights. Arrival, departure and daytime care arrangements are agreed when preparing your quote."
+                        >
+                            Cuidado nocturno: Ananda se queda a dormir
+                            en tu domicilio durante las noches acordadas.
+                            Los horarios de llegada, salida y la atención
+                            durante el día se definen al cotizar.
+                        </p>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <section class="seccion" aria-labelledby="titulo-proceso">
+            <h2
+                id="titulo-proceso"
+                data-es="¿Cómo lo coordinamos?"
+                data-en="How does it work?"
+            >¿Cómo lo coordinamos?</h2>
+
+            <ol class="pasos">
+                <li
+                    data-es="Comparte tus fechas, tu colonia y los cuidados que necesita tu perro."
+                    data-en="Share your dates, neighborhood and your dog's care needs."
+                >Comparte tus fechas, tu colonia y los cuidados que necesita tu perro.</li>
+
+                <li
+                    data-es="Consultamos disponibilidad y coordinamos la visita inicial."
+                    data-en="We check availability and arrange the initial meet-and-greet."
+                >Consultamos disponibilidad y coordinamos la visita inicial.</li>
+
+                <li
+                    data-es="Acordamos los cuidados, horarios y precio antes de confirmar."
+                    data-en="We agree on care, schedules and pricing before confirming."
+                >Acordamos los cuidados, horarios y precio antes de confirmar.</li>
+            </ol>
+        </section>
+
+        <section
+            class="seccion"
+            id="cotizacion"
+            aria-labelledby="titulo-cotizacion"
+        >
+            <div class="cotizacion">
+                <h2
+                    id="titulo-cotizacion"
+                    data-es="Cuéntanos sobre tu perro"
+                    data-en="Tell us about your dog"
+                >Cuéntanos sobre tu perro</h2>
+
+                <p
+                    data-es="Completa los datos para solicitar una cotización a Ananda por WhatsApp."
+                    data-en="Fill in the details to request a quote from Ananda on WhatsApp."
+                >
+                    Completa los datos para solicitar una cotización
+                    a Ananda por WhatsApp.
+                </p>
+
+                <form id="formulario-perros" class="formulario">
+                    <div class="campo">
+                        <label
+                            for="nombre"
+                            data-es="Tu nombre"
+                            data-en="Your name"
+                        >Tu nombre</label>
+                        <input
+                            id="nombre"
+                            name="nombre"
+                            autocomplete="name"
+                            maxlength="80"
+                            required
+                        >
+                    </div>
+
+                    <div class="campo">
+                        <label
+                            for="colonia"
+                            data-es="Colonia o zona"
+                            data-en="Neighborhood or area"
+                        >Colonia o zona</label>
+                        <input
+                            id="colonia"
+                            name="colonia"
+                            maxlength="150"
+                            required
+                        >
+                    </div>
+
+                    <div class="campo completo">
+                        <label
+                            for="modalidad"
+                            data-es="¿Qué cuidado necesitas?"
+                            data-en="What type of care do you need?"
+                        >¿Qué cuidado necesitas?</label>
+
+                        <select id="modalidad" name="modalidad">
+                            <option
+                                value="visitas"
+                                data-es="Visitas por horas"
+                                data-en="Hourly visits"
+                            >Visitas por horas</option>
+                            <option
+                                value="nocturno"
+                                data-es="Cuidado nocturno en mi domicilio"
+                                data-en="Overnight care in my home"
+                            >Cuidado nocturno en mi domicilio</option>
+                            <option
+                                value="ambos"
+                                data-es="Ambas modalidades"
+                                data-en="Both types of care"
+                            >Ambas modalidades</option>
+                        </select>
+                    </div>
+
+                    <div class="campo">
+                        <label
+                            for="fecha-inicio"
+                            data-es="Fecha de inicio"
+                            data-en="Start date"
+                        >Fecha de inicio</label>
+                        <input
+                            id="fecha-inicio"
+                            name="inicio"
+                            type="date"
+                            required
+                        >
+                    </div>
+
+                    <div class="campo">
+                        <label
+                            for="fecha-fin"
+                            data-es="Fecha de finalización"
+                            data-en="End date"
+                        >Fecha de finalización</label>
+                        <input
+                            id="fecha-fin"
+                            name="fin"
+                            type="date"
+                            required
+                        >
+                    </div>
+
+                    <div class="campo completo">
+                        <label
+                            for="horarios"
+                            data-es="Visitas y horarios que necesitas"
+                            data-en="Visits and times you need"
+                        >Visitas y horarios que necesitas</label>
+                        <textarea
+                            id="horarios"
+                            name="horarios"
+                            rows="2"
+                            maxlength="400"
+                            aria-describedby="ayuda-horarios"
+                            required
+                        ></textarea>
+                        <p
+                            class="ayuda"
+                            id="ayuda-horarios"
+                            data-es="Por ejemplo: dos visitas al día de una hora, o cuidado de 8 de la noche a 8 de la mañana."
+                            data-en="For example: two one-hour visits a day, or overnight care from 8 p.m. to 8 a.m."
+                        >
+                            Por ejemplo: dos visitas al día de una hora,
+                            o cuidado de 8 de la noche a 8 de la mañana.
+                        </p>
+                    </div>
+
+                    <div class="campo">
+                        <label
+                            for="cantidad"
+                            data-es="Número de perros"
+                            data-en="Number of dogs"
+                        >Número de perros</label>
+                        <input
+                            id="cantidad"
+                            name="cantidad"
+                            type="number"
+                            min="1"
+                            step="1"
+                            value="1"
+                            required
+                        >
+                    </div>
+
+                    <div class="campo">
+                        <label
+                            for="nombres-perros"
+                            data-es="Nombre de tu perro o perros"
+                            data-en="Your dog's or dogs' names"
+                        >Nombre de tu perro o perros</label>
+                        <input
+                            id="nombres-perros"
+                            name="perros"
+                            maxlength="200"
+                            required
+                        >
+                    </div>
+
+                    <div class="campo">
+                        <label
+                            for="edades"
+                            data-es="Edad de cada perro"
+                            data-en="Each dog's age"
+                        >Edad de cada perro</label>
+                        <input
+                            id="edades"
+                            name="edades"
+                            maxlength="200"
+                            required
+                        >
+                    </div>
+
+                    <div class="campo">
+                        <label
+                            for="tamanos"
+                            data-es="Tamaño o peso aproximado de cada perro"
+                            data-en="Each dog's size or approximate weight"
+                        >Tamaño o peso aproximado de cada perro</label>
+                        <input
+                            id="tamanos"
+                            name="tamanos"
+                            maxlength="200"
+                            required
+                        >
+                    </div>
+
+                    <div class="campo completo">
+                        <label
+                            for="cuidados"
+                            data-es="Rutinas y cuidados especiales (opcional)"
+                            data-en="Routines and special care needs (optional)"
+                        >Rutinas y cuidados especiales (opcional)</label>
+                        <textarea
+                            id="cuidados"
+                            name="cuidados"
+                            rows="4"
+                            maxlength="1000"
+                            aria-describedby="ayuda-cuidados"
+                        ></textarea>
+                        <p
+                            class="ayuda"
+                            id="ayuda-cuidados"
+                            data-es="Cuéntanos sus horarios de comida, hábitos de paseo y cómo suele relacionarse con personas nuevas."
+                            data-en="Tell us about feeding times, walking habits and how your dog usually responds to new people."
+                        >
+                            Cuéntanos sus horarios de comida, hábitos
+                            de paseo y cómo suele relacionarse con
+                            personas nuevas.
+                        </p>
+                    </div>
+
+                    <div class="completo">
+                        <button
+                            class="boton"
+                            type="submit"
+                            data-es="Solicitar cotización con Ananda"
+                            data-en="Request a quote from Ananda"
+                        >Solicitar cotización con Ananda</button>
+
+                        <p
+                            class="aviso"
+                            data-es="Podrás revisar el mensaje en WhatsApp antes de enviarlo. Esta solicitud no confirma el servicio; acordaremos disponibilidad, cuidados y precio contigo."
+                            data-en="You can review the message in WhatsApp before sending it. This request does not confirm a booking; we will agree on availability, care and pricing with you."
+                        >
+                            Podrás revisar el mensaje en WhatsApp antes
+                            de enviarlo. Esta solicitud no confirma el
+                            servicio; acordaremos disponibilidad,
+                            cuidados y precio contigo.
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="contenedor">
+            <p><strong>Lool Beh Servicios</strong></p>
+            <p>Mérida, Yucatán</p>
+
+            <a
+                href="../index.html"
+                data-es="Conoce otros servicios de Lool Beh"
+                data-en="Explore other Lool Beh services"
+            >Conoce otros servicios de Lool Beh</a>
+        </div>
+    </footer>
+
+    <a
+        id="whatsapp-directo"
+        class="whatsapp"
+        href="https://wa.me/525585375196?text=Hola%20Ananda%2C%20quisiera%20consultar%20el%20cuidado%20de%20perros%20a%20domicilio."
+        target="_blank"
+        rel="noopener noreferrer"
+        data-es="WhatsApp · Ananda"
+        data-en="WhatsApp · Ananda"
+    >WhatsApp · Ananda</a>
+
+    <script>
+        const telefonoAnanda = "525585375196";
+        let idiomaActual = "es";
+
+        const formulario = document.getElementById("formulario-perros");
+        const fechaInicio = document.getElementById("fecha-inicio");
+        const fechaFin = document.getElementById("fecha-fin");
+
+        function validarFechas() {
+            fechaFin.setCustomValidity("");
+            fechaFin.min = fechaInicio.value;
+
+            if (
+                fechaInicio.value &&
+                fechaFin.value &&
+                fechaFin.value < fechaInicio.value
+            ) {
+                fechaFin.setCustomValidity(
+                    idiomaActual === "es"
+                        ? "La fecha final debe ser igual o posterior a la fecha de inicio."
+                        : "The end date must be on or after the start date."
+                );
+            }
+        }
+
+        fechaInicio.addEventListener("input", validarFechas);
+        fechaFin.addEventListener("input", validarFechas);
+
+        function cambiarIdioma(idioma) {
+            idiomaActual = idioma;
+            document.documentElement.lang = idioma;
+
+            document.querySelectorAll("[data-es][data-en]").forEach(elemento => {
+                elemento.textContent = elemento.dataset[idioma];
+            });
+
+            document.querySelectorAll("[data-idioma]").forEach(boton => {
+                boton.setAttribute(
+                    "aria-pressed",
+                    String(boton.dataset.idioma === idioma)
+                );
+            });
+
+            document.title = idioma === "es"
+                ? "Cuidado de perros | Lool Beh Servicios"
+                : "In-home dog care | Lool Beh Servicios";
+
+            const saludo = idioma === "es"
+                ? "Hola Ananda, quisiera consultar el cuidado de perros a domicilio."
+                : "Hello Ananda, I would like to ask about in-home dog care.";
+
+            document.getElementById("whatsapp-directo").href =
+                `https://wa.me/${telefonoAnanda}?text=${encodeURIComponent(saludo)}`;
+
+            validarFechas();
+        }
+
+        document.querySelectorAll("[data-idioma]").forEach(boton => {
+            boton.addEventListener("click", () => {
+                cambiarIdioma(boton.dataset.idioma);
+            });
+        });
+
+        function formatearFecha(valor) {
+            const [anio, mes, dia] = valor.split("-");
+
+            return idiomaActual === "es"
+                ? `${dia}/${mes}/${anio}`
+                : `${anio}-${mes}-${dia}`;
+        }
+
+        formulario.addEventListener("submit", evento => {
+            evento.preventDefault();
+            validarFechas();
+
+            if (!formulario.reportValidity()) {
+                return;
+            }
+
+            const valor = id =>
+                document.getElementById(id).value.trim();
+
+            const selector = document.getElementById("modalidad");
+            const modalidad =
+                selector.options[selector.selectedIndex].textContent.trim();
+
+            const lineas = idiomaActual === "es"
+                ? [
+                    "Hola Ananda, quisiera cotizar el cuidado de mis perros a domicilio.",
+                    "",
+                    `Mi nombre: ${valor("nombre")}`,
+                    `Colonia o zona: ${valor("colonia")}`,
+                    `Modalidad: ${modalidad}`,
+                    `Inicio: ${formatearFecha(valor("fecha-inicio"))}`,
+                    `Finalización: ${formatearFecha(valor("fecha-fin"))}`,
+                    `Visitas y horarios: ${valor("horarios")}`,
+                    `Número de perros: ${valor("cantidad")}`,
+                    `Nombres: ${valor("nombres-perros")}`,
+                    `Edades: ${valor("edades")}`,
+                    `Tamaños o pesos: ${valor("tamanos")}`
+                ]
+                : [
+                    "Hello Ananda, I would like a quote for in-home dog care.",
+                    "",
+                    `My name: ${valor("nombre")}`,
+                    `Neighborhood or area: ${valor("colonia")}`,
+                    `Type of care: ${modalidad}`,
+                    `Start: ${formatearFecha(valor("fecha-inicio"))}`,
+                    `End: ${formatearFecha(valor("fecha-fin"))}`,
+                    `Visits and times: ${valor("horarios")}`,
+                    `Number of dogs: ${valor("cantidad")}`,
+                    `Names: ${valor("nombres-perros")}`,
+                    `Ages: ${valor("edades")}`,
+                    `Sizes or weights: ${valor("tamanos")}`
+                ];
+
+            if (valor("cuidados")) {
+                const etiqueta = idiomaActual === "es"
+                    ? "Rutinas y cuidados especiales"
+                    : "Routines and special care";
+
+                lineas.push(`${etiqueta}: ${valor("cuidados")}`);
+            }
+
+            const mensaje = encodeURIComponent(lineas.join("\n"));
+            window.location.href =
+                `https://wa.me/${telefonoAnanda}?text=${mensaje}`;
+        });
+    </script>
+</body>
+</html>
