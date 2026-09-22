@@ -20,26 +20,26 @@
 <body>
     <header class="portada">
         <nav class="selector-idioma" aria-label="Idioma / Language">
-    <button
-        type="button"
-        class="idioma activo"
-        data-idioma="es"
-        aria-pressed="true"
-        lang="es"
-    >
-        <span aria-hidden="true">🇲🇽</span> Español
-    </button>
+            <button
+                type="button"
+                class="idioma activo"
+                data-idioma="es"
+                aria-pressed="true"
+                lang="es"
+            >
+                <span aria-hidden="true">🇲🇽</span> Español
+            </button>
 
-    <button
-        type="button"
-        class="idioma"
-        data-idioma="en"
-        aria-pressed="false"
-        lang="en"
-    >
-        <span aria-hidden="true">🇺🇸</span> English
-    </button>
-</nav>
+            <button
+                type="button"
+                class="idioma"
+                data-idioma="en"
+                aria-pressed="false"
+                lang="en"
+            >
+                <span aria-hidden="true">🇺🇸</span> English
+            </button>
+        </nav>
         <div class="contenedor">
             <p class="portada__etiqueta">Mérida, Yucatán</p>
 
@@ -76,11 +76,11 @@
                             🏊
                         </span>
 
-                    <span class="servicio__nombre">
+                        <span class="servicio__nombre">
                             Limpieza y aspirado de piscinas
 
                         
-                    </span>
+                        </span>
 
                         <span class="servicio__indicador" aria-hidden="true">
                             +
@@ -89,10 +89,10 @@
 
                     <div class="servicio__contenido">
                         
-                            <p>
-                                Solicita una cotización según las dimensiones
-                                y el estado de tu piscina.
-                            </p>
+                        <p>
+                            Solicita una cotización según las dimensiones
+                            y el estado de tu piscina.
+                        </p>
                         
 
                         <a class="boton" href="piscinas/index.html">
@@ -130,31 +130,128 @@
                 </details>
 
                 <!-- HOSPEDAJE -->
+                <!-- HOSPEDAJE -->
                 <details class="servicio">
                     <summary class="servicio__ovalo">
-                        <span class="servicio__icono" aria-hidden="true">
-                            🏡
-                        </span>
+                        <span class="servicio__icono" aria-hidden="true">🏡</span>
 
                         <span class="servicio__nombre">
-                            Hospedaje
+                            <span
+                                data-es="Hospedaje"
+                                data-en="Accommodation"
+                            >Hospedaje</span>
                         </span>
 
-                        <span class="servicio__indicador" aria-hidden="true">
-                            +
-                        </span>
+                        <span class="servicio__indicador" aria-hidden="true">+</span>
                     </summary>
 
                     <div class="servicio__contenido">
-                        <p>
-                            Consulta disponibilidad y reserva
-                            directamente con nosotros en Casa Lool Beh.
+                        <p
+                            data-es="Disfruta tu estancia en Casa Lool Beh, Mérida. Comparte tus fechas y consulta disponibilidad y precio directamente con nosotros."
+                            data-en="Enjoy your stay at Casa Lool Beh, Mérida. Share your dates and contact us directly for availability and pricing."
+                        >
+                            Disfruta tu estancia en Casa Lool Beh, Mérida.
+                            Comparte tus fechas y consulta disponibilidad
+                            y precio directamente con nosotros.
                         </p>
 
-                        <p class="servicio__aviso">
-                            Estamos preparando esta sección con
-                            información para tu estancia.
-                        </p>
+                        <form id="formulario-hospedaje" class="hospedaje-formulario">
+                            <label for="hospedaje-nombre">
+                                <span data-es="Tu nombre" data-en="Your name">Tu nombre</span>
+                                <input
+                                    id="hospedaje-nombre"
+                                    name="nombre"
+                                    type="text"
+                                    autocomplete="name"
+                                    maxlength="80"
+                                    required
+                                >
+                            </label>
+
+                            <label for="hospedaje-entrada">
+                                <span data-es="Fecha de entrada" data-en="Check-in date">
+                                    Fecha de entrada
+                                </span>
+                                <input
+                                    id="hospedaje-entrada"
+                                    name="entrada"
+                                    type="date"
+                                    required
+                                >
+                            </label>
+
+                            <label for="hospedaje-salida">
+                                <span data-es="Fecha de salida" data-en="Check-out date">
+                                    Fecha de salida
+                                </span>
+                                <input
+                                    id="hospedaje-salida"
+                                    name="salida"
+                                    type="date"
+                                    required
+                                >
+                            </label>
+
+                            <label for="hospedaje-adultos">
+                                <span data-es="Adultos" data-en="Adults">Adultos</span>
+                                <input
+                                    id="hospedaje-adultos"
+                                    name="adultos"
+                                    type="number"
+                                    min="1"
+                                    step="1"
+                                    value="2"
+                                    required
+                                >
+                            </label>
+
+                            <label for="hospedaje-menores">
+                                <span data-es="Menores de edad" data-en="Children">
+                                    Menores de edad
+                                </span>
+                                <input
+                                    id="hospedaje-menores"
+                                    name="menores"
+                                    type="number"
+                                    min="0"
+                                    step="1"
+                                    value="0"
+                                    required
+                                >
+                            </label>
+
+                            <label for="hospedaje-comentarios">
+                                <span
+                                    data-es="Comentarios (opcional): edades de los menores, habitaciones necesarias u otras consultas"
+                                    data-en="Comments (optional): children's ages, rooms needed or other questions"
+                                >
+                                    Comentarios (opcional): edades de los menores,
+                                    habitaciones necesarias u otras consultas
+                                </span>
+                                <textarea
+                                    id="hospedaje-comentarios"
+                                    name="comentarios"
+                                    rows="3"
+                                    maxlength="700"
+                                ></textarea>
+                            </label>
+
+                            <button
+                                class="boton"
+                                type="submit"
+                                data-es="Consultar disponibilidad por WhatsApp"
+                                data-en="Check availability on WhatsApp"
+                            >Consultar disponibilidad por WhatsApp</button>
+
+                            <p
+                                data-es="Podrás revisar el mensaje antes de enviarlo. La reserva queda sujeta a nuestra confirmación de disponibilidad y precio."
+                                data-en="You can review the message before sending it. Your booking is subject to our confirmation of availability and pricing."
+                            >
+                                Podrás revisar el mensaje antes de enviarlo.
+                                La reserva queda sujeta a nuestra confirmación
+                                de disponibilidad y precio.
+                            </p>
+                        </form>
                     </div>
                 </details>
 
@@ -198,79 +295,79 @@
         </div>
     </footer>
 
-   <button
-    type="button"
-    id="abrir-contacto"
-    class="whatsapp-flotante"
-    aria-haspopup="dialog"
-    aria-controls="ventana-contacto"
->
-    WhatsApp · Contáctanos
-</button>
-
-<dialog
-    id="ventana-contacto"
-    class="ventana-contacto"
-    aria-labelledby="titulo-contacto"
->
     <button
         type="button"
-        id="cerrar-contacto"
-        class="contacto-cerrar"
-        aria-label="Cerrar ventana de contacto"
+        id="abrir-contacto"
+        class="whatsapp-flotante"
+        aria-haspopup="dialog"
+        aria-controls="ventana-contacto"
     >
-        ✕
+        WhatsApp · Contáctanos
     </button>
 
-    <h2 id="titulo-contacto">¡Hola! ¿En qué podemos ayudarte?</h2>
-
-    <p>
-        Cuéntanos qué servicio necesitas o escribe tu consulta.
-        Con gusto te atenderemos.
-    </p>
-
-    <p>
-        También puedes
-        <a id="explorar-servicios" href="#servicios">
-            explorar nuestros servicios
-        </a>
-        en esta página para conocer más detalles.
-    </p>
-
-    <label for="consulta-contacto">Escribe aquí tu consulta</label>
-
-    <textarea
-        id="consulta-contacto"
-        rows="4"
-        maxlength="1500"
-        placeholder="Por ejemplo: necesito un traslado al aeropuerto…"
-    ></textarea>
-
-    <div class="contacto-opciones">
-        <a
-            class="boton"
-            data-contacto="jose"
-            href="https://wa.me/527772755235"
-            target="_blank"
-            rel="noopener noreferrer"
+    <dialog
+        id="ventana-contacto"
+        class="ventana-contacto"
+        aria-labelledby="titulo-contacto"
+    >
+        <button
+            type="button"
+            id="cerrar-contacto"
+            class="contacto-cerrar"
+            aria-label="Cerrar ventana de contacto"
         >
-            WhatsApp con José Luis
-        </a>
+            ✕
+        </button>
 
-        <a
-            class="boton"
-            data-contacto="ananda"
-            href="https://wa.me/525585375197"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            WhatsApp con Ananda
-        </a>
-    </div>
+        <h2 id="titulo-contacto">¡Hola! ¿En qué podemos ayudarte?</h2>
 
-    <p class="contacto-aviso">
-        Podrás revisar el mensaje en WhatsApp antes de enviarlo.
-    </p>
-</dialog> 
+        <p>
+            Cuéntanos qué servicio necesitas o escribe tu consulta.
+            Con gusto te atenderemos.
+        </p>
+
+        <p>
+            También puedes
+            <a id="explorar-servicios" href="#servicios">
+                explorar nuestros servicios
+            </a>
+            en esta página para conocer más detalles.
+        </p>
+
+        <label for="consulta-contacto">Escribe aquí tu consulta</label>
+
+        <textarea
+            id="consulta-contacto"
+            rows="4"
+            maxlength="1500"
+            placeholder="Por ejemplo: necesito un traslado al aeropuerto…"
+        ></textarea>
+
+        <div class="contacto-opciones">
+            <a
+                class="boton"
+                data-contacto="jose"
+                href="https://wa.me/527772755235"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                WhatsApp con José Luis
+            </a>
+
+            <a
+                class="boton"
+                data-contacto="ananda"
+                href="https://wa.me/525585375197"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                WhatsApp con Ananda
+            </a>
+        </div>
+
+        <p class="contacto-aviso">
+            Podrás revisar el mensaje en WhatsApp antes de enviarlo.
+        </p>
+    </dialog> 
 </body>
 </html>
