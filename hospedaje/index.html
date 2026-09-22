@@ -1,0 +1,126 @@
+<!-- HOSPEDAJE -->
+<details class="servicio">
+    <summary class="servicio__ovalo">
+        <span class="servicio__icono" aria-hidden="true">🏡</span>
+
+        <span class="servicio__nombre">
+            <span
+                data-es="Hospedaje"
+                data-en="Accommodation"
+            >Hospedaje</span>
+        </span>
+
+        <span class="servicio__indicador" aria-hidden="true">+</span>
+    </summary>
+
+    <div class="servicio__contenido">
+        <p
+            data-es="Disfruta tu estancia en Casa Lool Beh, Mérida. Comparte tus fechas y consulta disponibilidad y precio directamente con nosotros."
+            data-en="Enjoy your stay at Casa Lool Beh, Mérida. Share your dates and contact us directly for availability and pricing."
+        >
+            Disfruta tu estancia en Casa Lool Beh, Mérida.
+            Comparte tus fechas, consulta disponibilidad
+            y precio directamente con nosotros.
+        </p>
+
+        <form id="formulario-hospedaje" class="hospedaje-formulario">
+            <label for="hospedaje-nombre">
+                <span data-es="Tu nombre" data-en="Your name">Tu nombre</span>
+                <input
+                    id="hospedaje-nombre"
+                    name="nombre"
+                    type="text"
+                    autocomplete="name"
+                    maxlength="80"
+                    required
+                >
+            </label>
+
+            <label for="hospedaje-entrada">
+                <span data-es="Fecha de entrada" data-en="Check-in date">
+                    Fecha de entrada
+                </span>
+                <input
+                    id="hospedaje-entrada"
+                    name="entrada"
+                    type="date"
+                    required
+                >
+            </label>
+
+            <label for="hospedaje-salida">
+                <span data-es="Fecha de salida" data-en="Check-out date">
+                    Fecha de salida
+                </span>
+                <input
+                    id="hospedaje-salida"
+                    name="salida"
+                    type="date"
+                    required
+                >
+            </label>
+
+            <label for="hospedaje-adultos">
+                <span data-es="Adultos" data-en="Adults">Adultos</span>
+                <input
+                    id="hospedaje-adultos"
+                    name="adultos"
+                    type="number"
+                    min="1"
+                    step="1"
+                    value="2"
+                    required
+                >
+            </label> 
+
+           
+
+            <label for="hospedaje-comentarios">
+                <span
+                    data-es="Comentarios (opcional):habitaciones necesarias u otras consultas"
+                    data-en="Comments (optional): children's ages, rooms needed or other questions"
+                >
+                    Comentarios (opcional): edades de los menores,
+                    habitaciones necesarias u otras consultas
+                </span>
+                <textarea
+                    id="hospedaje-comentarios"
+                    name="comentarios"
+                    rows="3"
+                    maxlength="700"
+                ></textarea>
+            </label>
+
+            <button
+                class="boton"
+                type="submit"
+                name="contacto"
+                value="527772755235"
+                data-es="Consultar con José Luis"
+                data-en="Contact José Luis"
+            >
+                Consultar con José Luis
+            </button>
+
+            <button
+                class="boton"
+                type="submit"
+                name="contacto"
+                value="525585375196"
+                data-es="Consultar con Ananda"
+                data-en="Contact Ananda"
+            >
+                Consultar con Ananda
+            </button>
+
+            <p
+                data-es="Podrás revisar el mensaje antes de enviarlo. La reserva queda sujeta a nuestra confirmación de disponibilidad y precio."
+                data-en="You can review the message before sending it. Your booking is subject to our confirmation of availability and pricing."
+            >
+                Podrás revisar el mensaje antes de enviarlo.
+                La reserva queda sujeta a nuestra confirmación
+                de disponibilidad y precio.
+            </p>
+        </form>
+    </div>
+</details>
